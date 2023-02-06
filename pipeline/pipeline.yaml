@@ -1,6 +1,23 @@
 tasks:
-  # Add tasks here...
+- source: scripts/get.py
+  product:
+    data: products/get.csv
+    nb: products/get.ipynb
 
-  # Example
-  # - source: path/to/script.py
-  #   product: products/report.ipynb
+- source: scripts/clean.py
+  product:
+    data: products/clean.csv
+    nb: products/clean.ipynb
+  
+- source: scripts/eda.py
+  product:
+    nb: products/eda.ipynb
+
+- source: scripts/features.py
+  product: 
+    nb: products/features.ipynb
+    data: products/features.csv
+
+- source: scripts/models.py
+  product: 
+    nb: products/models.ipynb
