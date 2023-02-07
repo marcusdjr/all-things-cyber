@@ -41,8 +41,16 @@ import numpy as np
 import nvdlib
 
 # %%
->>> r = nvdlib.searchCVE(pubStartDate = '2021-09-08 00:00', pubEndDate = '2021-12-01 00:00', keywordSearch = 'Microsoft Exchange', cvssV3Severity = 'Critical', key='9b21e27a-48f4-4581-9396-a1e17f8539c4  ', delay=6)
-for eachCVE in r:
-   print(eachCVE.id, str(eachCVE.score[0]), eachCVE.url)
+
+results = nvdlib.searchCVE(pubStartDate = '2023-01-01 00:00', pubEndDate = '2023-02-07 00:00', key='9b21e27a-48f4-4581-9396-a1e17f8539c4  ', delay=6)
+
+data = []
+for eachCVE in results:
+    data.append([eachCVE.id, eachCVE.score])
+    
+
+df = pd.DataFrame(r, columns=['id', 'score'])
+
+df.to_csv("cve_data.csv", index=False)
 
 # %%
