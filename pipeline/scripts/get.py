@@ -48,9 +48,19 @@ data = []
 for eachCVE in results:
     data.append([eachCVE.id, eachCVE.score])
     
+results = nvdlib.searchCVE(pubStartDate = '2023-01-01 00:00', pubEndDate = '2023-02-07 00:00', key='9b21e27a-48f4-4581-9396-a1e17f8539c4  ', delay=6)
 
-df = pd.DataFrame(r, columns=['id', 'score'])
+data = []
+for eachCVE in results:
+    data.append([eachCVE.id, eachCVE.score])
+    
+    
+df = pd.DataFrame(data, columns=["id", "score"])
 
-df.to_csv("cve_data.csv", index=False)
+df = df.score.str.split(pat=None, n=-2, expand=False)
+
+dfe)
+
+# %%
 
 # %%
