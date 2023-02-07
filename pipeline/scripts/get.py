@@ -35,4 +35,9 @@ product = None
 
 
 # %%
-# your code here...
+import os
+
+import pandas as pd
+import numpy as np 
+
+# %%
