@@ -57,10 +57,9 @@ for eachCVE in results:
     
 df = pd.DataFrame(data, columns=["id", "score"])
 
-df = df.score.str.split(pat=None, n=-2, expand=False)
+df.drop(df.filter(regex='None').columns, axis=1, inplace=True)
 
-dfe)
-
-# %%
+df.to_csv('cve_data.csv')
 
 # %%
+df.drop(regex='None').columns, axis=1, inplace=True)
