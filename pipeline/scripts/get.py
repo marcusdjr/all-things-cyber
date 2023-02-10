@@ -59,7 +59,22 @@ df = pd.DataFrame(data, columns=["id", "score"])
 
 df.drop(df.filter(regex='None').columns, axis=1, inplace=True)
 
-df.to_csv('cve_data.csv')
+df.to_csv('cve2_data.csv')
 
 # %%
-df.drop(regex='None').columns, axis=1, inplace=True)
+df = cve_data.csv
+
+# %%
+df.head()
+
+
+# %%
+def clean_currency(x):
+    """ If the value is a string, then remove currency symbol and delimiters
+    otherwise, the value is numeric and can be converted
+    """
+    if isinstance(x, str):
+        return(x.replace('$', '').replace(',', ''))
+    return(x)
+
+df['Price'] = df['Price'].apply(clean_currency).astype('float')
