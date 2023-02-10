@@ -35,4 +35,9 @@ product = None
 
 
 # %%
-# your code here...
+import pandas as pd
+
+# %%
+df = pd.read_csv(upstream['get']['data'])
+
+# %%

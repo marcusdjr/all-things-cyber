@@ -62,7 +62,7 @@ df.drop(df.filter(regex='None').columns, axis=1, inplace=True)
 df.to_csv('cve2_data.csv')
 
 # %%
-df = cve_data.csv
+df = pd.read_csv('cve_data.csv')
 
 # %%
 df.head()
@@ -74,7 +74,24 @@ def clean_currency(x):
     otherwise, the value is numeric and can be converted
     """
     if isinstance(x, str):
-        return(x.replace('$', '').replace(',', ''))
+        return(x.replace('None', '').replace(',', ''))
     return(x)
 
-df['Price'] = df['Price'].apply(clean_currency).astype('float')
+df['version'] = df['version'].apply(clean_currency)
+
+
+# %%
+def clean_currency(x):
+    """ If the value is a string, then remove currency symbol and delimiters
+    otherwise, the value is numeric and can be converted
+    """
+    if isinstance(x, str):
+        return(x.replace('[', '').replace(',', ''))
+    return(x)
+
+df['version'] = df['version'].apply(clean_currency)
+
+# %%
+df.head(70)
+
+# %%
