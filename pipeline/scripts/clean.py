@@ -40,4 +40,87 @@ import pandas as pd
 # %%
 df = pd.read_csv(upstream['get']['data'])
 
+
+# %%
+#Cleaning Version Col
+def clean_currency(x):
+    """ If the value is a string, then remove currency symbol and delimiters
+    otherwise, the value is numeric and can be converted
+    """
+    if isinstance(x, str):
+        return(x.replace('None', '').replace(',', ''))
+    return(x)
+
+df['version'] = df['version'].apply(clean_currency)
+
+
+# %%
+def clean_currency(x):
+    """ If the value is a string, then remove currency symbol and delimiters
+    otherwise, the value is numeric and can be converted
+    """
+    if isinstance(x, str):
+        return(x.replace('[', '').replace(',', ''))
+    return(x)
+
+df['version'] = df['version'].apply(clean_currency)
+
+
+# %%
+#Cleaning Score Col
+def clean_currency(x):
+    """ If the value is a string, then remove currency symbol and delimiters
+    otherwise, the value is numeric and can be converted
+    """
+    if isinstance(x, str):
+        return(x.replace('None', '').replace(',', ''))
+    return(x)
+
+df['score'] = df['score'].apply(clean_currency)
+
+
+# %%
+def clean_currency(x):
+    """ If the value is a string, then remove currency symbol and delimiters
+    otherwise, the value is numeric and can be converted
+    """
+    if isinstance(x, str):
+        return(x.replace('[', '').replace(',', ''))
+    return(x)
+
+df['score'] = df['score'].apply(clean_currency)
+
+
+# %%
+#Cleaning severity Col
+def clean_currency(x):
+    """ If the value is a string, then remove currency symbol and delimiters
+    otherwise, the value is numeric and can be converted
+    """
+    if isinstance(x, str):
+        return(x.replace('None', '').replace(',', ''))
+    return(x)
+
+df['severity'] = df['severity'].apply(clean_currency)
+
+
+# %%
+def clean_currency(x):
+    """ If the value is a string, then remove currency symbol and delimiters
+    otherwise, the value is numeric and can be converted
+    """
+    if isinstance(x, str):
+        return(x.replace('[', '').replace(',', ''))
+    return(x)
+
+df['severity'] = df['severity'].apply(clean_currency)
+
+# %%
+df.dropna
+
+# %%
+df.head(70)
+
+# %%
+
 # %%

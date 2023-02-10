@@ -92,6 +92,6 @@ def clean_currency(x):
 df['version'] = df['version'].apply(clean_currency)
 
 # %%
-df.head(70)
+df.head(40)
 
 # %%
